@@ -1,0 +1,26 @@
+<div class="container border border-black m-5">
+  <div class=" text-center m-2">
+    <label > Percentage {{progressValue}} </label><br>
+    <progress #bar [value]="progressValue" max="100"></progress>
+  </div>
+  <div class="row ">
+    <div #first class="col border  d-flex  justify-content-center align-items-center">
+      <app-first [(firstValue)]="progressValue" ></app-first>
+    </div>
+    <div #second class="col border   d-flex  justify-content-center align-items-center">
+      <app-second (firstOut)="progressValue=$event"  [secondValue]="progressValue"></app-second>
+    </div>
+  </div>
+  <div #third class="row">
+    <div class="col border   d-flex  justify-content-center align-items-center">
+      <app-third [thirdValue]="progressValue"/>
+    </div>
+    <div #fourth class="col border d-flex  justify-content-center align-items-center">
+      <app-fourth [(fourthValue)]="progressValue"/>
+    </div>
+  </div>
+
+</div>
+
+
+
